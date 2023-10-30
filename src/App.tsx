@@ -1,4 +1,6 @@
 import './App.css'
+import {Link, Route, Routes} from "react-router-dom";
+import ButterBiscuit from "./ButterBiscuit.tsx";
 import ChocolateChipCookie from "./ChocolateChipCookie.tsx";
 
 function App() {
@@ -6,7 +8,13 @@ function App() {
     return (
         <>
             <h1>Schoko-Laden</h1>
-            <ChocolateChipCookie/>
+            <Link to="/">Butter</Link>
+            <Link to="/chocolate">Schoko</Link>
+
+            <Routes>
+                <Route path="/" element={<ButterBiscuit/>}/>
+                <Route path="/chocolate" element={<ChocolateChipCookie/>}/>
+            </Routes>
         </>
     )
 }
